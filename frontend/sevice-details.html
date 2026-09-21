@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav id="header">
+    <div class="logo">Evento</div>
+    <ul id="primaryNav">
+      <li><a href="index2.html">Home</a></li>
+      <li><a href="service.html">Service</a></li>
+    </ul>
+  </nav>
+
+  <section id="service-details" class="service-details">
+    <h2 id="service-title"></h2>
+    <p id="service-description"></p>
+  </section>
+
+  <script>
+    // Fake data for demo
+    const services = {
+      1: {
+        title: "Wedding Planning",
+        description: "We provide full wedding planning services including venue booking, decoration, catering, music, and photography."
+      },
+      2: {
+        title: "Corporate Events",
+        description: "Our team organizes professional conferences, product launches, and corporate parties with precision."
+      },
+      3: {
+        title: "Birthday Parties",
+        description: "From kids' birthdays to milestone celebrations, we plan fun-filled parties with themes, cakes, and entertainment."
+      }
+    };
+
+    // Get ID from URL
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    // Display service details
+    if (services[id]) {
+      document.getElementById("service-title").textContent = services[id].title;
+      document.getElementById("service-description").textContent = services[id].description;
+    } else {
+      document.getElementById("service-details").innerHTML = "<p>Service not found.</p>";
+    }
+  </script>
+</body>
+</html>

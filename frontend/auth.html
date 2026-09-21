@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evento - Login / Signup</title>
+  <link rel="stylesheet" href="style.css">
+<style>
+  .auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #fdfdfd; /* soft white background */
+    padding: 20px;
+  }
+
+  .auth-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid #e6c200; /* subtle gold border */
+  }
+
+  .auth-box h2 {
+    margin-bottom: 20px;
+    color: #b68d00; /* rich gold */
+    font-weight: 600;
+  }
+
+  .auth-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #fff;
+    transition: border-color 0.3s ease;
+  }
+
+  .auth-box input:focus {
+    border-color: #b68d00;
+    outline: none;
+  }
+
+  .auth-box button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #d4af37, #b68d00); /* gold gradient */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .auth-box button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+  }
+
+  .toggle-link {
+    display: block;
+    margin-top: 15px;
+    color: #b68d00;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .toggle-link:hover {
+    color: #d4af37;
+  }
+</style>
+
+</head>
+<body>
+
+  <div class="auth-container">
+    <!-- Login Box -->
+    <div class="auth-box" id="login-box">
+      <h2>Login</h2>
+      <form>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <span class="toggle-link" onclick="showSignup()">Don't have an account? Sign Up</span>
+    </div>
+
+    <!-- Signup Box -->
+    <div class="auth-box" id="signup-box" style="display:none;">
+      <h2>Sign Up</h2>
+      <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+      </form>
+      <span class="toggle-link" onclick="showLogin()">Already have an account? Login</span>
+    </div>
+  </div>
+
+  <script>
+    function showSignup() {
+      document.getElementById("login-box").style.display = "none";
+      document.getElementById("signup-box").style.display = "block";
+    }
+    function showLogin() {
+      document.getElementById("signup-box").style.display = "none";
+      document.getElementById("login-box").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
+

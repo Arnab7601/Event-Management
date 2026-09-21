@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evento - Events</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav id="header">
+    <div class="logo">Evento</div>
+    <ul id="primaryNav">
+      <li><a href="index2.html">Home</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="events.html" class="active">Events</a></li>
+      <li><a href="price.html">Price</a></li>
+      <li><a href="review.html">Review</a></li>
+      <li><a href="contact.html">Contact</a></li>
+
+      <!-- ✅ Auth Controls -->
+      <li id="loginNav"><a href="login.html">Login</a></li>
+      <li id="signupNav"><a href="signup.html">Signup</a></li>
+      <li id="logoutNav" style="display:none;"><a href="#" id="logoutBtn">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Events Section -->
+  <section id="events" class="events">
+    <h2 class="section-title">Upcoming Events</h2>
+    <div id="events-list" class="events-list">
+      <!-- Events will be loaded dynamically from script.js -->
+    </div>
+  </section>
+
+  <!-- Add Event Section (✅ hidden if not logged in) -->
+  <section id="admin" class="admin" style="display:none;">
+    <h2>Add New Event</h2>
+    <form id="event-form">
+      <input type="text" id="event-title" placeholder="Event Title" required>
+      <input type="date" id="event-date" required>
+      <textarea id="event-description" placeholder="Event Description" required></textarea>
+      <button type="submit" class="btn">Add Event</button>
+    </form>
+    <p id="form-message"></p>
+    <p class="note">⚠️ You must be logged in to add or delete events.</p>
+  </section>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+  <!-- ✅ Navbar & Auth Control -->
+  <script>
+    function updateNavbar() {
+      const token = localStorage.getItem("token");
+      const loginNav = document.getElementById("loginNav");
+      const signupNav = document.getElementById("signupNav");
+      const logoutNav = document.getElementById("logoutNav");
+      const adminSection = document.getElementById("admin");
+
+      if (token) {
+        if (loginNav) loginNav.style.display = "none";
+        if (signupNav) signupNav.style.display = "none";
+        if (logoutNav) logoutNav.style.display = "block";
+        if (adminSection) adminSection.style.display = "block"; // ✅ show Add Event form
+      } else {
+        if (loginNav) loginNav.style.display = "block";
+        if (signupNav) signupNav.style.display = "block";
+        if (logoutNav) logoutNav.style.display = "none";
+        if (adminSection) adminSection.style.display = "none"; // ✅ hide Add Event form
+      }
+    }
+
+    // ✅ Handle logout
+    document.getElementById("logoutBtn")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      localStorage.removeItem("token");
+      alert("✅ Logged out successfully!");
+      updateNavbar();
+      window.location.href = "login.html"; 
+    });
+
+    // Run on page load
+    updateNavbar();
+  </script>
+</body>
+</html>
+

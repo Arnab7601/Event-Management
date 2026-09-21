@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evento - Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 20px;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 25px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card i {
+      font-size: 40px;
+      color: #ff5722;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .explore-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #ff5722;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .explore-btn:hover {
+      background: #e64a19;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav id="header">
+    <div class="logo">Evento</div>
+    <ul id="primaryNav">
+      <li><a href="index2.html">Home</a></li>
+      <li><a href="service.html" class="active">Service</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="price.html">Price</a></li>
+      <li><a href="review.html">Review</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Services Section -->
+  <section class="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <i class="ri-lightbulb-flash-fill"></i>
+        <h3>Event Strategy</h3>
+        <p>We help you plan and execute perfect events with flawless organization, timelines, and vendor management.</p>
+        <a href="event-strategy.html" class="explore-btn">Explore</a>
+      </div>
+
+      <div class="service-card">
+        <i class="ri-brush-fill"></i>
+        <h3>Design & Branding</h3>
+        <p>Stage design, branding, and media kits to deliver a cohesive and impactful experience for your guests.</p>
+        <a href="design-branding.html" class="explore-btn">Explore</a>
+      </div>
+
+      <div class="service-card">
+        <i class="ri-mic-fill"></i>
+        <h3>On-site Production</h3>
+        <p>Registration, A/V setup, staffing, and run-of-show management to make your event stress-free and smooth.</p>
+        <a href="on-site-production.html" class="explore-btn">Explore</a>
+      </div>
+
+      <div class="service-card">
+        <i class="ri-cake-2-fill"></i>
+        <h3>Special Celebrations</h3>
+        <p>Birthdays, anniversaries, engagements, or private parties—crafted with personal touches for unforgettable memories.</p>
+        <a href="special-celebrations.html" class="explore-btn">Explore</a>
+      </div>
+
+      <div class="service-card">
+        <i class="ri-building-fill"></i>
+        <h3>Corporate Events</h3>
+        <p>Professional management of conferences, workshops, and product launches that elevate your brand image.</p>
+        <a href="corporate-events.html" class="explore-btn">Explore</a>
+      </div>
+
+      <div class="service-card">
+        <i class="ri-music-2-fill"></i>
+        <h3>Concerts & Festivals</h3>
+        <p>Stage setup, sound systems, lighting, and artist coordination to deliver an electrifying atmosphere.</p>
+        <a href="concerts-festivals.html" class="explore-btn">Explore</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; <span id="year"></span> Event Management. All Rights Reserved.</p>
+      <ul class="footer-links">
+        <li><a href="service.html">Services</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
+
+
