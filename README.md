@@ -44,3 +44,10 @@ SOFTWARE PROJECT/
     ├── price.html
     ├── script.js
     └── style.css
+```
+
+## Author
+
+Arnab Maity
+
+Developed as a Full-Stack Web Development Internship Project.
